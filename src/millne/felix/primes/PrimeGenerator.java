@@ -14,6 +14,11 @@ public class PrimeGenerator {
 
         List<Integer> resultsArray = new ArrayList<>();
         resultsArray.add(2);
+
+        if(testNumPrimes > 1){
+            resultsArray.add(3);
+        }
+
         return resultsArray;
     }
 }

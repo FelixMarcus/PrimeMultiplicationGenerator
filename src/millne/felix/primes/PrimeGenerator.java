@@ -1,6 +1,5 @@
 package millne.felix.primes;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +11,34 @@ public class PrimeGenerator {
         if(numPrimes == 0)
         return new ArrayList<Integer>();
 
-        List<Integer> resultsArray = new ArrayList<>();
-        resultsArray.add(2);
+        List<Integer> foundPrimes = new ArrayList<>();
+        foundPrimes.add(2);
 
-        if(numPrimes > 1){
-            resultsArray.add(3);
+        int numberBeingChecked = 3;
+        while(foundPrimes.size() < numPrimes){
+
+            if(isPrime(foundPrimes, numberBeingChecked)){
+                foundPrimes.add(numberBeingChecked);
+            }
+            numberBeingChecked += 2; //Only check odd numbers
         }
 
-        return resultsArray;
+        return foundPrimes;
+    }
+
+    private boolean isPrime(List<Integer> foundPrimes, int numberBeingChecked) {
+        boolean isPrime = true;
+        for(Integer knownPrime: foundPrimes){
+            if(isAFactor(numberBeingChecked, knownPrime)){
+                isPrime = false;
+                break;
+            }
+        }
+
+        return isPrime;
+    }
+
+    private boolean isAFactor(int numberBeingChecked, Integer knownPrime) {
+        return numberBeingChecked % knownPrime == 0;
     }
 }

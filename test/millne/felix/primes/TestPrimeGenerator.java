@@ -47,4 +47,21 @@ public class TestPrimeGenerator {
         Integer secondPrime = 3;
         assertEquals(secondPrime, primesResult.get(1));
     }
+
+    @Test
+    public void testThreePrimes(){
+        int testNumPrimes = 3;
+        PrimeGenerator testPrimeGenerator = new PrimeGenerator();
+        List<Integer> primesResult = testPrimeGenerator.getPrimes(testNumPrimes);
+
+        assertEquals(testNumPrimes, primesResult.size());
+        Integer firstPrime = 2;
+        assertEquals(firstPrime, primesResult.get(0));
+
+        Integer secondPrime = 3;
+        assertEquals(secondPrime, primesResult.get(1));
+
+        Integer thirdPrime = 5;
+        assertEquals(thirdPrime, primesResult.get(2));
+    }
 }

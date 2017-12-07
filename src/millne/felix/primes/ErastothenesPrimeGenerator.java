@@ -1,22 +1,22 @@
 package millne.felix.primes;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by FelixMarcus on 07/12/2017.
  */
-public class PrimeGenerator {
-    public List<Integer> getPrimes(int numPrimes) {
-        if(numPrimes == 0)
+public class ErastothenesPrimeGenerator {
+    public List<Integer> getPrimes(int numberOfPrimesToBeFound) {
+        if(numberOfPrimesToBeFound == 0)
         return new ArrayList<Integer>();
 
-        List<Integer> foundPrimes = new ArrayList<>();
+        List<Integer> foundPrimes = new ArrayList<>(numberOfPrimesToBeFound);
         foundPrimes.add(2);
 
         int numberBeingChecked = 3;
-        while(foundPrimes.size() < numPrimes){
-
+        while(foundPrimes.size() < numberOfPrimesToBeFound){
             if(isPrime(foundPrimes, numberBeingChecked)){
                 foundPrimes.add(numberBeingChecked);
             }

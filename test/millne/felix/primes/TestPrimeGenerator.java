@@ -1,12 +1,8 @@
 package millne.felix.primes;
 
-import millne.felix.primes.PrimeGenerator;
-import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.IntBinaryOperator;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,7 +14,7 @@ public class TestPrimeGenerator {
     @Test
     public void testZeroPrimes(){
         int testNumPrimes = 0;
-        PrimeGenerator testPrimeGenerator = new PrimeGenerator();
+        ErastothenesPrimeGenerator testPrimeGenerator = new ErastothenesPrimeGenerator();
         List<Integer> primesResult = testPrimeGenerator.getPrimes(testNumPrimes);
         assertEquals(testNumPrimes, primesResult.size());
     }
@@ -26,7 +22,7 @@ public class TestPrimeGenerator {
     @Test
     public void testOnePrimes() {
         int testNumPrimes = 1;
-        PrimeGenerator testPrimeGenerator = new PrimeGenerator();
+        ErastothenesPrimeGenerator testPrimeGenerator = new ErastothenesPrimeGenerator();
         List<Integer> primesResult = testPrimeGenerator.getPrimes(testNumPrimes);
 
         assertEquals(testNumPrimes, primesResult.size());
@@ -37,7 +33,7 @@ public class TestPrimeGenerator {
     @Test
     public void testTwoPrimes(){
         int testNumPrimes = 2;
-        PrimeGenerator testPrimeGenerator = new PrimeGenerator();
+        ErastothenesPrimeGenerator testPrimeGenerator = new ErastothenesPrimeGenerator();
         List<Integer> primesResult = testPrimeGenerator.getPrimes(testNumPrimes);
 
         assertEquals(testNumPrimes, primesResult.size());
@@ -51,7 +47,7 @@ public class TestPrimeGenerator {
     @Test
     public void testThreePrimes(){
         int testNumPrimes = 3;
-        PrimeGenerator testPrimeGenerator = new PrimeGenerator();
+        ErastothenesPrimeGenerator testPrimeGenerator = new ErastothenesPrimeGenerator();
         List<Integer> primesResult = testPrimeGenerator.getPrimes(testNumPrimes);
 
         assertEquals(testNumPrimes, primesResult.size());

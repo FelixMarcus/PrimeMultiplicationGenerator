@@ -20,7 +20,7 @@ public class TestPrimeGenerator {
         int testNumPrimes = 0;
         PrimeGenerator testPrimeGenerator = new PrimeGenerator();
         List<Integer> primesResult = testPrimeGenerator.getPrimes(testNumPrimes);
-        assertEquals(0, primesResult.size());
+        assertEquals(testNumPrimes, primesResult.size());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class TestPrimeGenerator {
         PrimeGenerator testPrimeGenerator = new PrimeGenerator();
         List<Integer> primesResult = testPrimeGenerator.getPrimes(testNumPrimes);
 
-        assertEquals(1, primesResult.size());
+        assertEquals(testNumPrimes, primesResult.size());
         Integer firstPrime = 2;
         assertEquals(firstPrime, primesResult.get(0));
     }

@@ -29,6 +29,10 @@ public class ErastothenesPrimeGenerator {
     private boolean isPrime(List<Integer> foundPrimes, int numberBeingChecked) {
         boolean isPrime = true;
         for(Integer knownPrime: foundPrimes){
+            if(numberHasNoLargerPossibleFactors(numberBeingChecked, knownPrime)){
+                break;
+            }
+
             if(isAFactor(numberBeingChecked, knownPrime)){
                 isPrime = false;
                 break;
@@ -36,6 +40,12 @@ public class ErastothenesPrimeGenerator {
         }
 
         return isPrime;
+    }
+
+    private boolean numberHasNoLargerPossibleFactors(int numberBeingChecked, Integer knownPrime) {
+        //Number cannot have a factor of knownPrime if it is smaller than the square of known prime
+        //(assuming all smaller primes have been checked)
+        return numberBeingChecked < knownPrime * knownPrime;
     }
 
     private boolean isAFactor(int numberBeingChecked, Integer knownPrime) {
